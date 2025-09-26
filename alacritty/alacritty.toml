@@ -1,0 +1,50 @@
+# Archivo de configuración básico para Alacritty
+
+# -----------------------------------------------------------------------------
+# Fuentes
+# -----------------------------------------------------------------------------
+[font]
+normal = { family = "UbuntuMono Nerd Font", style = "Regular" }
+bold = { family = "UbuntuMono Nerd Font", style = "Bold" }
+italic = { family = "UbuntuMono Nerd Font", style = "Italic" }
+bold_italic = { family = "UbuntuMono Nerd Font", style = "Bold Italic" }
+size = 14.0
+
+# -----------------------------------------------------------------------------
+# Colores (Tema Nord)
+# -----------------------------------------------------------------------------
+[colors]
+# Colores primarios
+primary = { background = "0x2e3440", foreground = "0xd8dee9" }
+
+# Colores de cursor
+cursor = { text = "0x2e3440", cursor = "0xd8dee9" }
+
+# Colores de selección
+selection = { text = "0x2e3440", background = "0xd8dee9" }
+
+# Colores normales
+normal = { black = "0x3b4252", red = "0xbf616a", green = "0xa3be8c", yellow = "0xebcb8b", blue = "0x81a1c1", magenta = "0xb48ead", cyan = "0x88c0d0", white = "0xe5e9f0" }
+
+# Colores brillantes
+bright = { black = "0x4c566a", red = "0xbf616a", green = "0xa3be8c", yellow = "0xebcb8b", blue = "0x81a1c1", magenta = "0xb48ead", cyan = "0x8fbcbb", white = "0xeff2f7" }
+
+# -----------------------------------------------------------------------------
+# Ventana
+# -----------------------------------------------------------------------------
+[window]
+dimensions = { columns = 100, lines = 30 }
+padding = { x = 8, y = 8 }
+opacity = 1.0
+blur = false
+
+# -----------------------------------------------------------------------------
+# Atajos de teclado
+# -----------------------------------------------------------------------------
+[keyboard]
+bindings = [
+  { key = "Paste", mods = "Control|Shift", action = "Paste" },
+  { key = "Copy", mods = "Control|Shift", action = "Copy" },
+  { key = "V", mods = "Control|Shift", action = "Paste" },
+  { key = "C", mods = "Control|Shift", action = "Copy" },
+]

@@ -1,0 +1,99 @@
+[colors]
+background = #222831
+background-alt = #31363F
+foreground = #EEEEEE
+primary = #76ABAE
+secondary = #8ABEB7
+alert = #e54c5e
+disabled = #707880
+
+[bar/example]
+width = 100%
+radius = 0
+; dpi = 96
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 1pt
+
+;border-bottom-size= 2pt
+;border-color = ${colors.primary}
+
+padding-left = 0
+padding-right = 0
+
+module-margin = 1
+margin= 5
+
+separator-foreground = ${colors.disabled}
+
+font-0 = "UbuntuMono Nerd Font Mono:size=11;2"
+font-1 = "monospace:size=10;2"
+font-2 = "UbuntuMono Nerd Font Mono:size=14;3"
+
+modules-left = xworkspaces
+;modules-center= 
+modules-right = systray pulseaudio date
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+enable-ipc = true
+
+[module/power]
+type = custom/script
+exec = echo "  "  ; El emoji de power
+click-left = ~/bin/power_menu.sh
+format-underline = ${colors.alert}
+format-foreground = ${colors.foreground}
+
+[module/systray]
+type = internal/tray
+tray-spacing = 16pt
+
+[module/xworkspaces]
+type = internal/xworkspaces
+
+label-active = %name%
+label-active-foreground = ${colors.background}
+label-active-background = ${colors.primary}
+#label-active-underline= ${colors.primary}
+label-active-padding = 1
+
+label-occupied = %name%
+label-occupied-padding = 1
+
+label-urgent = %name%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+
+label-empty = %name%
+label-empty-foreground = ${colors.disabled}
+label-empty-padding = 1
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+;format-volume-prefix = "󰕾 "
+;format-volume-prefix-foreground = ${colors.primary}
+format-volume = <label-volume>
+
+label-volume =  %{T3}󰕾%{T-} %percentage%%
+
+label-muted = muted
+label-muted-foreground = ${colors.disabled}
+
+[module/date]
+type = internal/date
+interval = 1
+
+date = %I:%M %p
+date-alt = %d-%m-%Y %I:%M:%S %p
+
+label = %date%
+label-foreground = ${colors.foreground}
+
+[settings]
+screenchange-reload = true
+pseudo-transparency = true
